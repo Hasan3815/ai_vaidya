@@ -1,0 +1,118 @@
+import 'package:ai_vaidya/core/constant/app_color.dart';
+import 'package:ai_vaidya/widgets/animated_wave.dart';
+import 'package:ai_vaidya/widgets/custom_animated_bubble.dart';
+import 'package:ai_vaidya/widgets/custom_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class DoctorHeader extends StatelessWidget {
+  const DoctorHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 155.h,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: AppColors.primaryGradient,
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(28.r),
+        ),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(28.r),
+        ),
+        child: Stack(
+          children: [
+            CustomAnimatedBubble(
+              size: 90.r,
+              left: 15.w,
+              top: 35.h,
+              color: Colors.white.withOpacity(0.12),
+              duration: const Duration(seconds: 4),
+            ),
+            CustomAnimatedBubble(
+              size: 55.r,
+              left: 300.w,
+              top: 45.h,
+              color: Colors.white.withOpacity(0.15),
+              duration: const Duration(seconds: 3),
+            ),
+            Positioned(
+              bottom: -45.h,
+              left: 0,
+              right: 0,
+              child: AnimatedWave(
+                color: Colors.white.withOpacity(0.15),
+                height: 85.h,
+                speed: 1,
+              ),
+            ),
+            SafeArea(
+              bottom: false,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 18.w),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Container(
+                        height: 42.r,
+                        width: 42.r,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.18),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          color: Colors.white,
+                          size: 20.sp,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 14.w),
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomText(
+                            text: 'Find a Doctor',
+                            color: Colors.white,
+                            fontSize: 21.sp,
+                            fontWeight: FontWeight.w800,
+                          ),
+                          SizedBox(height: 4.h),
+                          CustomText(
+                            text: 'Choose the best doctor for you',
+                            color: Colors.white.withOpacity(0.82),
+                            fontSize: 12.5.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 44.r,
+                      width: 44.r,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.18),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.medical_services_rounded,
+                        color: Colors.white,
+                        size: 23.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
