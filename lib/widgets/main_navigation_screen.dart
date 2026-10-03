@@ -1,6 +1,6 @@
 
 
-import 'package:ai_vaidya/screens/Doctor_section/%20find_doctor_screen.dart';
+import 'package:ai_vaidya/screens/Doctor_section/find_doctor_screen.dart';
 import 'package:ai_vaidya/screens/Profile_section/profile_screen.dart';
 import 'package:ai_vaidya/screens/Setting_section/setting_screen.dart';
 import 'package:ai_vaidya/screens/home_dashboard.dart';

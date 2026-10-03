@@ -1,6 +1,6 @@
 
 import 'package:ai_vaidya/core/constant/app_color.dart';
-import 'package:ai_vaidya/screens/Doctor_section/%20find_doctor_screen.dart';
+import 'package:ai_vaidya/screens/Doctor_section/find_doctor_screen.dart';
 import 'package:ai_vaidya/screens/Ai_symptoms_section/symptoms_checker_screen.dart';
 import 'package:ai_vaidya/screens/Record_section/health_records_screen.dart';
 import 'package:ai_vaidya/screens/Reminders_section/reminders_screen.dart';
